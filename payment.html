@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnus Payment</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #fff;
+      color: #000;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: #2d0052;
+      color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .card h2 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: #ffcc00;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin: 8px 0;
+      font-weight: bold;
+    }
+
+    .account-number {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .account-name {
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffcc00;
+      margin-top: 5px;
+    }
+
+    .note {
+      margin-top: 10px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #ffcc00;
+      line-height: 1.6;
+    }
+
+    .copy-btn {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 4px 10px;
+      font-size: 12px;
+      border: none;
+      border-radius: 6px;
+      background: #ff9900;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: #e68900;
+    }
+
+    .verify-section {
+      margin-top: 25px;
+    }
+
+    .verify-btn {
+      display: block;
+      width: 100%;
+      max-width: 350px;
+      margin: auto;
+      padding: 15px;
+      border: none;
+      border-radius: 25px;
+      background: #000;
+      color: #fff;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .verify-btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <p style="font-size:18px; font-weight:600; color:#333; margin-bottom:20px;">
+    For your selected package, transfer exactly 
+    <b>₦11,000</b>, <b>₦17,500</b>, or <b>₦28,500</b> 
+    to any of the accounts below for your coupon code registration
+  </p>
+
+  <!-- First Merchant -->
+  <div class="card">
+    <h2>MERCHANT 1</h2>
+    <h3>OPAY</h3>
+    <p class="account-number">
+      <span id="acct1">8080403421</span>
+      <button class="copy-btn" onclick="copyText('8080403421')">📋</button>
+    </p>
+    <p class="account-name">Lawrencia Nwokike</p>
+  </div>
+
+  <!-- Second Merchant -->
+  <div class="card">
+    <h2>MERCHANT 2</h2>
+    <h3>Wema BANK</h3>
+    <p class="account-number">
+      <span id="acct2">0435246802</span>
+      <button class="copy-btn" onclick="copyText('0435246802')">📋</button>
+    </p>
+    <p class="account-name">jeremiah james</p>
+    <p class="note">(NOTE: Don’t pay with Opay. Use PalmPay, FCMB, or other banks.)</p>
+  </div>
+
+  <!-- Verify -->
+  <div class="verify-section">
+    <p>Click the button below to verify your payment</p>
+    <a href="https://wa.link/qgugms" target="_blank" class="verify-btn">✅ I have made the transfer</a>
+  </div>
+
+  <footer>
+    © 2025 Magnus. All Rights Reserved.
+  </footer>
+
+  <script>
+    function copyText(account) {
+      navigator.clipboard.writeText(account).then(() => {
+        alert("Account number copied: " + account);
+      });
+    }
+  </script>
+
+</body>
+</html>
+

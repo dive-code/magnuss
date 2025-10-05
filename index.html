@@ -1,0 +1,262 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnus Office</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #000;
+      color: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #111;
+    }
+
+    header .logo img {
+      width: 70px;   /* logo width */
+      height: auto;   /* maintain aspect ratio */
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: orange;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Hero & Magnus tech images */
+    .hero-image img {
+      width: 100%;
+      max-width: 800px;   /* prevent overly large display */
+      height: auto;
+      border-radius: 12px;
+      margin: 20px 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 40px;
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(to right, #ff9900, #ff0057);
+      border-radius: 40px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Plans */
+    .plan-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .plan-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 18px;
+      color: orange;
+    }
+
+    .plan-card p {
+      margin: 6px 0;
+      font-size: 14px;
+      color: #ddd;
+    }
+
+    .plan-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .plan-card ul li {
+      margin: 6px 0;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .plan-card .btn {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      font-weight: 600;
+      background: linear-gradient(to right, #ff9900, #ff0057);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      background: #111;
+      font-size: 13px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Magnus Logo">
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#plans">Plans</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Work – Earn – Withdraw</h1>
+    <p>Magnus offers unrestricted access to everyone within and outside Nigeria. 
+      You don't stay a day without completing 2–5 jobs at least.</p>
+    <div class="hero-image">
+      <img src="hero-banner.jpg" alt="Hero Banner">
+    </div>
+    <a href="register.html" class="cta">Join Us Now</a>
+  </section>
+
+  <!-- What Magnus Has in Store -->
+  <section>
+    <h2>✨ What Magnus has in store for you as a user!</h2>
+    <ul style="text-align:left; display:inline-block;">
+      <li>▫️ Hot, In-demand skills</li>
+      <li>▫️ Unlimited access to digital products</li>
+      <li>▫️ Job offers from top international companies upon skill acquisition</li>
+      <li>▫️ Global rewards and recognition</li>
+      <li>▫️ Expert guidance from experienced coaches and instructors</li>
+      <li>▫️ Unlimited earning potential to achieve your financial goals</li>
+      <li>▫️ Earning over ₦30,000 daily is assured!</li>
+    </ul>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans">
+    <h2>Choose Your Preferred Plan</h2>
+
+    <div class="plan-card">
+      <h3>🦾 Magnus Pro : ₦17,500</h3>
+      <p>▫️ Direct commission is ₦11,500</p>
+      <p>▫️ Indirect is ₦650</p>
+      <ul>
+        <li>Unlimited Job requests</li>
+        <li>Unlimited Skills activities</li>
+        <li>Limited earning Structures</li>
+        <li>Limited Vendorship opportunities</li>
+        <li>Weekly payment</li>
+      </ul>
+      <a href="register.html" class="btn">Register for Magnus Pro</a>
+    </div>
+
+    <div class="plan-card">
+      <h3>🔥 Magnus Business : ₦28,500</h3>
+      <p>▫️ Direct commission is ₦17,100</p>
+      <p>▫️ Indirect is ₦1,300</p>
+      <ul>
+        <li>Unlimited job opportunities</li>
+        <li>Unlimited earning Structures</li>
+        <li>Unlimited skill activities</li>
+        <li>Unlimited job requests</li>
+        <li>Unlimited Vendorship opportunities</li>
+        <li>Daily payment remittance</li>
+      </ul>
+      <a href="register.html" class="btn">Register for Magnus Business</a>
+    </div>
+
+    <div class="plan-card">
+      <h3>⭐ Magnus Lite : ₦11,000</h3>
+      <p>▫️ Direct commission is ₦7,500</p>
+      <p>▫️ Indirect is ₦350</p>
+      <ul>
+        <li>Unlimited job requests</li>
+        <li>Limited skills activities</li>
+        <li>Limited earning Structures</li>
+        <li>Limited Vendorship opportunities</li>
+        <li>Monthly payment remittance</li>
+      </ul>
+      <a href="register.html" class="btn">Register for Magnus Lite</a>
+    </div>
+
+    <p style="margin-top:20px; font-size:14px; color:#bbb;">
+      The higher your package, the higher your earnings 🚀
+    </p>
+  </section>
+
+  <!-- Magnus Technology -->
+  <section>
+    <h2>Magnus Technology 👨‍💻</h2>
+    <div class="hero-image">
+      <img src="magnus-tech.jpg" alt="Magnus Technology">
+    </div>
+  </section>
+
+  <!-- What Magnus Offers -->
+  <section>
+    <h2>🔥 What MAGNUS Offers You</h2>
+    <ul style="text-align:left; display:inline-block;">
+      <li>✔️ Resale Rights – Earn while others are still learning</li>
+      <li>✔️ Trading (Buy & Resell) – Simple income opportunities</li>
+      <li>✔️ Instant Skill Application – Put knowledge into practice fast</li>
+      <li>✔️ Standby Data Entry Job Offer – Ready-to-go tasks for extra income</li>
+      <li>✔️ Discounted Digital Products – Access affordable tools that work</li>
+      <li>✔️ Multi-Layered Sales Rewards – Earn from direct and indirect sales</li>
+      <li>✔️ Global Reward Structure – Opportunities that scale worldwide</li>
+    </ul>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section style="text-align:center; padding:50px 20px; background:#000;">
+    <h2 style="color:#fff; font-size:22px; margin-bottom:10px;">Register and Get Instant Access</h2>
+    <p style="color:#bbb; font-size:14px; margin-bottom:20px;">Limited Access – Register Now</p>
+    <a href="register.html" class="cta">Register Now</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Magnus. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnus Registration</title>
+<style>
+body {
+  margin:0; font-family:"Poppins",Arial,sans-serif; background:#000; color:#fff;
+  display:flex; justify-content:center; align-items:center; min-height:100vh; padding:20px;
+}
+.container {
+  background:#111; padding:30px; border-radius:12px; width:100%; max-width:500px;
+  box-shadow:0 0 25px rgba(0,0,0,0.8);
+}
+h1 { color:#ff9900; text-align:center; margin-bottom:20px; font-size:1.8rem; }
+label { display:block; margin:10px 0 5px; font-size:0.95rem; }
+input, select {
+  width:100%; padding:12px; border:none; border-radius:6px; margin-bottom:5px;
+  background:#222; color:#fff; font-size:0.95rem; box-sizing:border-box; transition:border 0.2s;
+}
+input::placeholder { color:#aaa; }
+input:focus, select:focus { border:1px solid #ff9900; outline:none; }
+.btn {
+  width:100%; padding:14px; border:none; border-radius:25px; font-size:1rem; font-weight:bold;
+  color:#fff; background:linear-gradient(to right, #ff9900, #ff0057);
+  cursor:not-allowed; opacity:0.5; transition:opacity 0.2s ease, transform 0.2s ease;
+}
+.btn.active {
+  cursor:pointer; opacity:1;
+}
+.btn:hover.active { opacity:0.9; transform:scale(1.02); }
+.checkbox-container { display:flex; align-items:center; margin-bottom:15px; font-size:0.9rem; }
+.checkbox-container input { margin-right:10px; width:auto; }
+.error { color:#ff4444; font-size:0.85rem; margin-bottom:10px; display:none; }
+footer { margin-top:15px; text-align:center; font-size:0.8rem; color:#aaa; }
+@media (max-width:480px){
+  .container{padding:20px 15px; border-radius:10px;}
+  h1{font-size:1.5rem;}
+  input, select{font-size:0.9rem; padding:10px;}
+  .btn{padding:12px; font-size:0.95rem;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Create Your Account</h1>
+<form id="registrationForm" novalidate>
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+  <div class="error" id="nameError">Please enter your full name (at least 2 words).</div>
+
+  <label for="username">Username</label>
+  <input type="text" id="username" name="username" placeholder="Choose a username" required>
+  <div class="error" id="usernameError">Username must be 3-15 characters, letters, numbers, or underscores only.</div>
+
+  <label for="number">Phone Number</label>
+  <input type="tel" id="number" name="number" placeholder="Enter your phone number" required>
+  <div class="error" id="numberError">Phone number must be 10-15 digits.</div>
+
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" placeholder="Enter your email" required>
+  <div class="error" id="emailError">Please enter a valid email address.</div>
+
+  <label for="country">Select Country</label>
+  <select id="country" name="country" required>
+    <option value="">Select country</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="Other">Other Country</option>
+  </select>
+  <div class="error" id="countryError">Please select a country.</div>
+
+  <label for="plan">Select Plan</label>
+  <select id="plan" name="plan" required>
+    <option value="">Choose a plan</option>
+    <option value="11000">Lite – ₦11,000</option>
+    <option value="17500">Pro – ₦17,500</option>
+    <option value="28500">Business – ₦28,500</option>
+  </select>
+  <div class="error" id="planError">Please select a plan.</div>
+
+  <div class="checkbox-container">
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the <a href="#" style="color:#ff9900;">Terms & Conditions</a></label>
+  </div>
+  <div class="error" id="termsError">You must agree to the terms and conditions.</div>
+
+  <button type="submit" class="btn" id="continueBtn">Continue</button>
+</form>
+<footer>© 2025 Magnus. All Rights Reserved.</footer>
+</div>
+
+<script>
+const form = document.getElementById('registrationForm');
+const country = document.getElementById('country');
+const continueBtn = document.getElementById('continueBtn');
+
+// Enable button only when a country is selected
+country.addEventListener('change', function() {
+  if(this.value !== ''){
+    continueBtn.classList.add("active");
+    continueBtn.disabled = false;
+    continueBtn.style.cursor = "pointer";
+    continueBtn.textContent = this.value === 'Nigeria' ? "Continue to Payment" : "Continue to WhatsApp";
+  } else {
+    continueBtn.classList.remove("active");
+    continueBtn.disabled = true;
+    continueBtn.textContent = "Continue";
+  }
+});
+
+// Form submit with validation and redirect logic
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  if(!continueBtn.classList.contains("active")) return;
+
+  let valid = true;
+
+  // Validation
+  const name = document.getElementById('name');
+  const username = document.getElementById('username');
+  const number = document.getElementById('number');
+  const email = document.getElementById('email');
+  const plan = document.getElementById('plan');
+  const terms = document.getElementById('terms');
+
+  document.getElementById('nameError').style.display = name.value.trim().split(' ').length < 2 ? (valid=false, 'block') : 'none';
+  document.getElementById('usernameError').style.display = !/^[A-Za-z0-9_]{3,15}$/.test(username.value.trim()) ? (valid=false,'block') : 'none';
+  document.getElementById('numberError').style.display = !/^[0-9]{10,15}$/.test(number.value.trim()) ? (valid=false,'block') : 'none';
+  document.getElementById('emailError').style.display = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) ? (valid=false,'block') : 'none';
+  document.getElementById('countryError').style.display = country.value==='' ? (valid=false,'block') : 'none';
+  document.getElementById('planError').style.display = plan.value==='' ? (valid=false,'block') : 'none';
+  document.getElementById('termsError').style.display = !terms.checked ? (valid=false,'block') : 'none';
+
+  if(!valid) return;
+
+  // Redirect based on country
+  if(country.value === 'Nigeria'){
+    window.location.href = "payment.html"; 
+  } else if(country.value === 'Other'){
+    let message = "Hello, I'm a foreigner. How can I pay for Magnus? I am from another country.";
+    let encodedMessage = encodeURIComponent(message);
+    window.location.href = "https://wa.me/2349134554410?text=" + encodedMessage;
+  }
+});
+</script>
+</body>
+</html>
